@@ -7,19 +7,18 @@
       </el-menu>
     </el-header>
 
-    <el-main>
+    <el-main class="main">
       <router-view />
     </el-main>
-    <el-footer class="footer"
-      >©2025 林强叔叔的小屋 ｜
+
+    <el-footer class="footer">
+      ©2025 林强叔叔的小屋 ｜
       <a href="https://beian.miit.gov.cn/" target="_blank">
         闽ICP备2025087254号
-      </a></el-footer
-    >
+      </a>
+    </el-footer>
   </el-container>
 </template>
-
-<script setup></script>
 
 <style scoped>
   .layout {
@@ -38,6 +37,7 @@
 
   .el-main {
     flex: 1;
+    display: flex; /* 关键：让 router-view 内部能用 flex 撑满 */
   }
 
   .footer {
@@ -58,6 +58,6 @@
   }
 
   .footer a:hover {
-    color: #409eff; /* Element Plus 主色调，高亮时会更清晰 */
+    color: #409eff;
   }
 </style>
